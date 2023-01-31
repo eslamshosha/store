@@ -86,12 +86,12 @@ $(document).ready(function () {
       },
     },
     pagination: {
-      el: ".products-slider-2 .swiper-pagination",
+      el: ".products-slider-3 .swiper-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: ".products-slider-2 .swiper-btn-next",
-      prevEl: ".products-slider-2 .swiper-btn-prev",
+      nextEl: ".products-slider-3 .swiper-btn-next",
+      prevEl: ".products-slider-3 .swiper-btn-prev",
     },
   });
   ///////// **product-qty** /////////
