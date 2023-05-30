@@ -2375,7 +2375,29 @@ html[dir="ltr"] .user-cont {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-
+@media (min-width: 991px) {
+  .mo-nav-item {
+    padding: 8px 0;
+  }
+  .mo-nav-item .drop-down {
+    top: calc(100% + 8px);
+  }
+  .mo-nav-item .drop-down::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
+    opacity: 1;
+  }
+}
 .drop-down > a {
   font-size: 15px;
   font-weight: 500;
@@ -3367,11 +3389,11 @@ hr {
 }
 
 .code-input input::placeholder {
-  color: #a4a4a4;
+  color: #c2c2c2;
 }
 
 .code-input input.active {
-  font-size: 22px;
+  font-size: 18px;
   color: var(--main-color);
   font-weight: 700;
   border-color: var(--main-color);
@@ -6105,5 +6127,99 @@ nav .menu-close:focus {
   .delivery-map {
     height: auto;
   }
+}
+.check-group {
+  text-align: start;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  max-width: 585px;
+}
+.check-width {
+  min-width: 25%;
+}
+.check-label {
+  /* min-width: 25%; */
+  text-align: start;
+  position: relative;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--main-color);
+  padding-inline-start: 35px;
+  transition: all 0.3s ease-in-out;
+}
+.check-group input[type="checkbox"],
+.check-group input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.check-group .checkmark {
+  border: 2px solid transparent;
+  border-radius: 0;
+  background-color: #f1f1f1;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.check-group .custom-checkmark {
+  border-radius: 2px;
+}
+.check-group input[type="checkbox"] ~ .checkmark {
+  border-radius: 2px;
+}
+.check-group:hover input ~ .checkmark {
+  background-color: #f1f1f1;
+  transition: all 0.3s ease-in-out;
+}
+/* .check-group input:checked ~ .checkmark {
+  background-color: var(--main-color);
+} */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  visibility: visible;
+}
+.check-group input:checked ~ .checkmark:after {
+  opacity: 1;
+  visibility: visible;
+}
+.check-group .checkmark:after {
+  content: "";
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: var(--main-color);
+}
+.checkout-content .float-field label {
+  margin: 0 0 10px;
+  padding: 0 30px;
+  font-size: 15px;
+  color: var(--sec-color);
+  font-weight: 500;
+}
+.checkout-content .select2-container .select2-selection--single {
+  width: 100%;
+  height: 50px;
+  border-radius: var(--border-radius);
+  background-color: #fcfcfc;
+  border: 2px solid #f0f0f0;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--sec-color);
+  padding: 0 30px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 /*# sourceMappingURL=main.css.map */

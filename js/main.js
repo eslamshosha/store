@@ -287,17 +287,22 @@ if (classExists) {
       m = "59";
     }
     document.getElementById("counter").innerHTML = m + ":" + s;
-    setTimeout(startTimer, 1000);
-  }
-
-  function checkSecond(sec) {
-    if (sec < 10 && sec >= 0) {
-      sec = "0" + sec;
-    } // add zero in front of numbers < 10
-    if (sec < 0) {
-      sec = "59";
+    var timerRef = setTimeout(startTimer, 1000);
+    if ((s == 0) & (m == 0)) {
+      console.log("2");
+      document.getElementById("counter").innerHTML = "time up";
+      clearTimeout(timerRef);
+      return;
     }
-    return sec;
+    function checkSecond(sec) {
+      if (sec < 10 && sec >= 0) {
+        sec = "0" + sec;
+      } // add zero in front of numbers < 10
+      if (sec < 0) {
+        sec = "59";
+      }
+      return sec;
+    }
   }
 }
 
