@@ -6241,6 +6241,7 @@ nav .menu-close:focus {
 }
 .brands-ancor {
   font-size: 16px;
+  font-weight: 500;
   color: var(--sec-color);
   display: flex;
   flex-direction: column;
