@@ -94,6 +94,43 @@ $(document).ready(function () {
       prevEl: ".products-slider-3 .swiper-btn-prev",
     },
   });
+   ///////// **brands-section** /////////
+   var brandsSlider = new Swiper(".brands-section .swiper-container", {
+    loop: true,
+    autoplay: true,
+    preloadImages: false,
+    pagination: {
+      el: ".brands-slider .swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".brands-slider .swiper-btn-next",
+      prevEl: ".brands-slider .swiper-btn-prev",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+      767: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+      992: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      1199: {
+        slidesPerView: 6,
+        spaceBetween: 30,
+      },
+    },
+    on: {
+      init: function (swiper) {
+        lazyLoad();
+      },
+    },
+  });
   ///////// **product-qty** /////////
   $(".qty-plus").on("click", function () {
     var $parentElm = $(this).parents(".item-qty");
